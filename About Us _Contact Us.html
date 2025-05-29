@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us / Contact Us - Useful Technology Tools</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        
+        :root {
+            --primary-blue: #007BFF;
+            --dark-blue: #0056b3;
+            --light-blue-hover: #d1e7ff;
+            --text-dark: #333;
+            --text-grey: #666;
+            --bg-white: #ffffff;
+            --bg-light-grey: #f8f8f8;
+            --border-light: #eee;
+            --button-green: #28a745;
+            --button-green-hover: #218838;
+            --success-color: #28a745;
+            --modal-bg: rgba(0, 0, 0, 0.6); 
+        }
+
+        body {
+            font-family: 'Open Sans', Arial, sans-serif;
+            background-color: var(--bg-white);
+            color: var(--text-dark);
+            margin: 0;
+            padding: 0;
+            line-height: 1.7;
+            direction: ltr;
+            text-align: left;
+        }
+
+        header {
+            background-color: var(--primary-blue);
+            color: white;
+            text-align: center;
+            padding: 25px 20px;
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .logo {
+            width: 50px;
+            height: 50px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: white;
+        }
+
+        nav {
+            background-color: var(--dark-blue);
+            text-align: center;
+            padding: 12px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 18px;
+            font-weight: 600;
+            font-size: 19px;
+            transition: color 0.3s ease-in-out;
+            display: inline-block;
+            padding: 5px 0;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+            color: var(--light-blue-hover);
+        }
+
+        main {
+            padding: 30px 20px;
+            max-width: 900px;
+            margin: 30px auto;
+            background: var(--bg-white);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            border-radius: 8px;
+        }
+
+        h1 {
+            color: var(--primary-blue);
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 30px;
+            font-weight: 700;
+        }
+
+        h2 {
+            color: var(--dark-blue);
+            font-size: 24px;
+            margin-top: 25px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+            font-size: 17px;
+        }
+
+        fieldset {
+            border: 1px solid var(--border-light);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            background-color: var(--bg-light-grey);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        legend {
+            font-size: 22px;
+            font-weight: bold;
+            color: var(--dark-blue);
+            padding: 0 10px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        textarea:focus {
+            border-color: var(--primary-blue);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        input[type="submit"] {
+            background-color: var(--button-green);
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: 600;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: var(--button-green-hover);
+            transform: translateY(-2px);
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background-color: var(--border-light);
+            margin: 30px 0;
+        }
+
+        footer {
+            background-color: var(--bg-light-grey);
+            color: var(--text-grey);
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+            border-top: 1px solid var(--border-light);
+            font-size: 15px;
+            direction: ltr;
+        }
+
+        
+        .modal {
+            display: none; 
+            position: fixed;
+            z-index: 1000; 
+            left: 0;
+            top: 0;
+            width: 100%; 
+            height: 100%; 
+            overflow: auto; 
+            background-color: var(--modal-bg); 
+            display: flex; 
+            align-items: center;
+            justify-content: center; 
+            opacity: 0; 
+            transition: opacity 0.3s ease-in-out; 
+            pointer-events: none;
+        }
+
+        .modal.show {
+            opacity: 1; 
+            pointer-events: all; 
+        }
+
+        .modal-content {
+            background-color: var(--bg-white);
+            margin: auto; 
+            padding: 40px;
+            border: 1px solid #888;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            position: relative; 
+            transform: translateY(-20px);
+            transition: transform 0.3s ease-out;
+        }
+
+        .modal.show .modal-content {
+            transform: translateY(0);
+        }
+
+        .modal-content h2 {
+            color: var(--success-color);
+            font-size: 30px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .modal-content p {
+            font-size: 18px;
+            margin-bottom: 25px;
+            color: var(--text-dark);
+            text-align: center;
+        }
+
+        .modal-button {
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: 600;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .modal-button:hover {
+            background-color: var(--dark-blue);
+            transform: translateY(-2px);
+        }
+
+        
+        @media (max-width: 768px) {
+            header {
+                font-size: 24px;
+                padding: 15px 10px;
+            }
+            .logo {
+                width: 40px;
+                height: 40px;
+                font-size: 20px;
+            }
+            nav a {
+                font-size: 16px;
+                margin: 0 10px;
+            }
+            main {
+                padding: 20px 15px;
+                margin: 20px auto;
+            }
+            h1 {
+                font-size: 26px;
+            }
+            h2 {
+                font-size: 20px;
+            }
+            p, ul li {
+                font-size: 16px;
+            }
+            input[type="text"],
+            input[type="email"],
+            textarea {
+                width: calc(100% - 20px);
+            }
+            .modal-content {
+                padding: 30px 20px;
+                width: 95%;
+            }
+            .modal-content h2 {
+                font-size: 24px;
+            }
+            .modal-content p {
+                font-size: 16px;
+            }
+            .modal-button {
+                padding: 10px 20px;
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo"><i class="fas fa-tools"></i></div>
+        Useful Technology Tools for University Students
+    </header>
+
+    <nav>
+        <a href="Homepage.html">Homepage</a>
+        <a href="Technical tools jobs.html">Technical Tools Jobs</a>
+        <a href="Explanatory video.html">Explanatory Video</a>
+        <a href="Download tools.html">Download Tools</a>
+        <a href="About Us _Contact Us.html">About Us / Contact Us</a>
+    </nav>
+
+    <main>
+        <section>
+            <h1><i class="fas fa-info-circle"></i> Who We Are</h1>
+            <p>Hello! My name is Samer Abu Wareh, and I am a dedicated student currently pursuing Software Engineering at the Arab Open University. This website is a project born out of a desire to not only achieve a high evaluation score but also to significantly develop my skills in web design and development.</p>
+            <p>Our aim is to provide valuable insights into technological tools that can empower university students in their academic journey, making learning more efficient and enjoyable. We believe that leveraging the right technology can make a substantial difference in academic success and personal growth.</p>
+        </section>
+
+        <hr>
+
+        <section>
+            <h1><i class="fas fa-envelope"></i> Contact Us</h1>
+            <fieldset>
+                <legend><h2>Enter Your Information</h2></legend>
+                <form id="contactForm" action="#" method="post">
+                    <div class="form-group">
+                        <label for="userName"><i class="fas fa-user"></i> Your Name:</label>
+                        <input type="text" id="userName" name="userName" required placeholder="Enter your full name">
+                    </div>
+                    <div class="form-group">
+                        <label for="userEmail"><i class="fas fa-at"></i> Your Email:</label>
+                        <input type="email" id="userEmail" name="userEmail" placeholder="example@gmail.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="userComment"><i class="fas fa-comment"></i> Your Comment:</label>
+                        <textarea id="userComment" name="userComment" rows="6" required placeholder="Write your message here..."></textarea>
+                    </div>
+                    <input type="submit" value="Send Message">
+                </form>
+            </fieldset>
+        </section>
+
+    </main>
+
+    <div id="thankYouModal" class="modal">
+        <div class="modal-content">
+            <h2><i class="fas fa-check-circle"></i> Message Sent!</h2>
+            <p>Thank you for contacting us, <span id="userNameDisplay"></span>! We appreciate your message and will get back to you as soon as possible.</p>
+            <a href="Homepage.html" class="modal-button"><i class="fas fa-home"></i> Go to Homepage</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 Useful Technology Tools for University Students. All Rights Reserved.</p>
+        <p>Designed by [Samer Abu Wardeh]</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('contactForm');
+            const thankYouModal = document.getElementById('thankYouModal');
+            const userNameInput = document.getElementById('userName');
+            const userNameDisplay = document.getElementById('userNameDisplay'); 
+
+            form.addEventListener('submit', function(event) {
+                event.preventDefault(); 
+
+                
+                if (!form.checkValidity()) {
+                    
+                    form.reportValidity();
+                    return; 
+                }
+
+                
+                const userName = userNameInput.value.trim();
+                if (userName) {
+                    userNameDisplay.textContent = userName;
+                } else {
+                    userNameDisplay.textContent = "Friend"; 
+                }
+
+
+                
+                thankYouModal.style.display = 'flex'; 
+                setTimeout(() => {
+                    thankYouModal.classList.add('show'); 
+                }, 10);
+
+
+                
+                form.reset();
+            });
+
+            
+            
+            thankYouModal.addEventListener('click', function(event) {
+                if (event.target === thankYouModal) { 
+                    thankYouModal.classList.remove('show');
+                    setTimeout(() => {
+                        thankYouModal.style.display = 'none';
+                    }, 300); 
+                }
+            });
+        });
+    </script>
+</body>
+</html>
